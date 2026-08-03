@@ -1,0 +1,221 @@
+/* Gemeinsames Design für Senf 19 */
+
+/* 1. Schriftstile registrieren 
+entfernt wegen Link auf Adobe Seite*/
+
+/* 2. Grundlegende Einstellungen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "lumios-typewriter-new", monospace;
+    background-color: #ffffff;
+    color: #2b2b2b;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #cca47e;
+    background-image: url('kraftpapier.jpg');
+    background-size: cover;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------------------------------------- */
+/* HAUPT-HEADER OBEN (für index.html & alle Seiten)   */
+/* -------------------------------------------------- */
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Das Wort "Senf" ganz oben */
+.logo-text {
+    font-size: 3.5rem;       /* <-- DIESE ZAHL ändert die Größe von "Senf" oben */
+    font-weight: normal;     /* <-- Macht "Senf" oben schlank und NICHT mehr fett! */
+    line-height: 1;
+    color: #2b2b2b;
+}
+
+/* Das Logo "19.png" ganz oben */
+.logo-img {
+    height: 60px;            /* <-- Passt die 19 oben an die Schrift an */
+    width: auto;
+}
+
+.caption {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #2b2b2b;
+    padding-bottom: 15px;
+}
+
+nav a {
+    color: #2b2b2b;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Senffeld Banner */
+.banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* -------------------------------------------------- */
+/* SORTEN-BOXEN UNTEN (für sorten.html)              */
+/* -------------------------------------------------- */
+
+.sorten-box {
+    border: 2px solid #2b2b2b;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.sorten-box.chili { border-color: #b83a26; }
+.sorten-box.gewuerze { border-color: #6e5077; }
+.sorten-box.aprikose { border-color: #d99b73; }
+
+.sorten-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* 1. Das Wort "Senf" bei den Sorten */
+.sorten-header .sorten-title:first-child {
+    font-size: 2.45rem;       /* <-- Größe von "Senf" in den Sorten-Boxen */
+    font-weight: normal;
+    line-height: 1;
+}
+
+/* 2. Nur die Sortennamen dahinter (Aprikose, Gewürze etc.) */
+.sorten-title[class*="accent-"] {
+    font-size: 1.5rem;       /* <-- Größe der Sortennamen */
+    font-weight: normal;
+    line-height: 1;
+    margin-left: 14px;       /* <-- DIESE ZAHL steuert den Abstand NUR zur Sorte! */
+}
+
+/* 3. Das Bild "19" in den Sorten-Boxen */
+.sorten-header .logo-img {
+    height: 42px;            /* <-- Höhe der 19 bei den Sorten */
+    width: auto;
+}
+
+.accent-chili { color: #b83a26; }
+.accent-gewuerze { color: #6e5077; }
+.accent-aprikose {
+    color: #d99b73;
+    text-shadow: 1px 1px 0px #4a3319, -0.5px -0.5px 0px #4a3319;
+}
+
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.taste {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.ingredients {
+    font-size: 0.9rem;
+    border-top: 1px dashed rgba(0,0,0,0.2);
+    padding-top: 10px;
+}
+
+.allergen {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Kontakt & Buttons */
+.cta-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(43, 43, 43, 0.05);
+    border-radius: 6px;
+}
+
+.btn-email {
+    display: inline-block;
+    background: #4a3319;
+    color: #cca47e;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.btn-email:hover {
+    background: #614321;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    border-top: 1px solid #2b2b2b;
+    padding-top: 15px;
+}
+
+footer a {
+    color: #2b2b2b;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Bild für die Geschichte (vollständiges Format & guter Abstand) */
+.story-img {
+    width: 100%;
+    height: auto;             /* Behält das originale Format (z. B. Quadrat) bei ohne Beschneidung */
+    border-radius: 8px;       /* Schön abgerundete Ecken */
+    margin-top: 30px;         /* Großzügiger Abstand nach oben zum Text */
+    margin-bottom: 30px;      /* Abstand nach unten zur Bestell-Box */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Subtiler Schatten */
+}
