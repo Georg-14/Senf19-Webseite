@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktuelles & Märkte — Senf 19</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pzt1zjx.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-container">
+            <span class="logo-text">Senf</span>
+            <img src="19.png" alt="19" class="logo-img">
+        </div>
+        <p class="caption">Aktuelle Neuigkeiten und wo Sie uns persönlich treffen.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Unsere Geschichte</a>
+        <a href="sorten.html">Unsere Sorten</a>
+        <a href="aktuelles.html">Aktuelles</a>
+        <a href="impressum.html" style="white-space: nowrap;">Impressum & Datenschutz</a>
+    </nav>
+
+    <main>
+        <!-- Begrüssungstext (Freistehend, ohne Box) -->
+        <section class="intro-section" style="margin-bottom: 30px;">
+            <h2 style="font-family: inherit; margin-bottom: 10px;">Herzlich willkommen!</h2>
+            <p class="description" style="font-size: 1.1rem; line-height: 1.6;">
+                Hier informieren wir Sie regelmässig über unsere anstehenden Märkte, neue Sorten und besondere Aktionen. Wir freuen uns, Sie persönlich an unserem Stand zu begrüssen!
+            </p>
+        </section>
+
+        <!-- Markt-Termine (In der gewohnten Sorten-Box) -->
+        <div class="sorten-box">
+            <h2>Nächste Märkte & Termine</h2>
+            <p class="taste">Besuchen Sie uns vor Ort und probieren Sie unsere handgemachten Senfsorten:</p>
+            
+            <ul style="list-style-type: none; padding-left: 0; line-height: 1.8;">
+                <!-- Beispiel-Termin 1 -->
+                <li class="event-item" data-date="2026-08-14">
+                    <strong>Freitag, 14. August – Bürkliplatz Zürich</strong> 06:00 – 11:00 Uhr
+                </li>
+                
+                <!-- Beispiel-Termin 2 -->
+                <li class="event-item" data-date="2026-08-15">
+                    <strong>Samstag, 15. August – Markt Oerlikon</strong> 06:00 – 12:00 Uhr
+                </li>
+            </ul>
+
+            <p id="no-events-msg" style="display: none; font-style: italic; margin-top: 15px;">
+                Derzeit stehen keine weiteren Markttermine fest. Schauen Sie bald wieder vorbei!
+            </p>
+        </div>
+
+        <!-- Freies Textfeld unter der Box (Korrekt strukturierte Absätze) -->
+        <section class="extra-info-section" style="margin-top: 35px; margin-bottom: 20px;">
+            <p class="description" style="line-height: 1.6;">
+                Und unser neuer Aprikosen-Senf 🍑? Der kommt richtig gut an und geht weg wie frische Weggli! 😋
+            </p>
+            <p class="description" style="line-height: 1.6;">
+                Falls Sie ihn noch nicht probiert haben oder Ihr Glas bereits leer ist: Jetzt ist die perfekte Gelegenheit, sich noch eines zu sichern.
+            </p> 
+            <p class="description" style="line-height: 1.6;">
+                Nächste Woche sind wir nicht an den Märkten. Also: Vorbeikommen, Lieblingssenf auffüllen und vielleicht gleich ein Glas Aprikosen-Senf mitnehmen. 🍑💛
+            </p>
+            <p class="description" style="line-height: 1.6;">
+                Wir freuen uns auf Sie – auf bekannte Gesichter, nette Gespräche und natürlich ganz viel Senf!
+            </p>
+            <p class="description" style="line-height: 1.6;">
+                Herzlich <br>
+                Cornelia & Christian
+            </p>
+        </section>
+
+        <div class="cta-section">
+            <p>Sie möchten eine grössere Menge bestellen oder haben Fragen?</p>
+            <a href="mailto:kontakt@senf19.ch?subject=Anfrage%20Aktuelles" class="btn-email">Jetzt Kontakt aufnehmen</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Senf 19. Alle Rechte vorbehalten. | <a href="impressum.html">Impressum & Datenschutz</a></p>
+    </footer>
+</div>
+
+<!-- Automatisches Ausblenden vergangener Termine -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const events = document.querySelectorAll('.event-item');
+        let visibleCount = 0;
+
+        events.forEach(function(event) {
+            const eventDateStr = event.getAttribute('data-date');
+            if (eventDateStr) {
+                const eventDate = new Date(eventDateStr);
+                if (eventDate < today) {
+                    event.style.display = 'none';
+                } else {
+                    visibleCount++;
+                }
+            }
+        });
+
+        if (visibleCount === 0) {
+            document.getElementById('no-events-msg').style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
