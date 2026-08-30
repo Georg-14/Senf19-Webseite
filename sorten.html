@@ -7,33 +7,48 @@
     <link rel="stylesheet" href="https://use.typekit.net/pzt1zjx.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* CSS für das schräge, transparente Banner */
-        .sorten-box.aprikose .sorten-header {
+        /* --- Großer Banner für "Ausverkauft!" mittig in der Aprikosen-Box --- */
+        .sorten-box.aprikose {
             position: relative;
             overflow: visible;
+            opacity: 0.85; /* Macht die ausverkaufte Box optisch etwas dezenter */
         }
 
-        .ribbon-sommeraktion {
+        .ribbon-ausverkauft {
             position: absolute;
-            top: -5px;
-            right: -10px;
-            background-color: rgba(230, 81, 0, 0.75); /* Halbtransparentes warmes Orange */
-            color: #ffffff;
+            top: 50%;
+            left: 50%;
+            /* Exakt zentriert & um -13 Grad gedreht */
+            transform: translate(-50%, -50%) rotate(-13deg); 
+            background-color: rgba(230, 81, 0, 0.95); /* Original warmes Orange */
+            color: #000000;                     /* Schwarze Schrift */
             font-family: inherit;
-            font-size: 0.85rem;
+            font-size: 1.7rem;                  /* Prägnante, große Schrift */
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 14px;
-            border-radius: 4px;
-            transform: rotate(6deg); /* Leicht schräg gestellt */
+            letter-spacing: 2px;
+            padding: 14px 40px;                 /* Großzügiges Polster */
+            border-radius: 6px;
             pointer-events: none;
-            z-index: 1; /* Liegt elegant über/hinter dem Titel-Bereich */
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-
-            /* NEU: Zentrierte Ausrichtung & kompakter Zeilenabstand */
+            z-index: 20;                        /* Liegt sicher über allen Inhalten */
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
             text-align: center;
-            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        /* --- Neue Sorte: Zwetschge --- */
+        .sorten-box.zwetschge {
+            border-color: #583385; /* Tiefer Zwetschgen-Farbton für den Rahmen */
+        }
+
+        .sorten-title.accent-zwetschge {
+            /* Linearer Farbverlauf von Blau zu Violett/Purpur */
+            background: linear-gradient(135deg, #1d4ed8 0%, #6b21a8 50%, #86198f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
     </style>
 </head>
@@ -49,11 +64,11 @@
     </header>
 
     <nav>
-    <a href="index.html">Unsere Geschichte</a>
-    <a href="sorten.html">Unsere Sorten</a>
-    <a href="aktuelles.html">Aktuelles</a>
-    <a href="impressum.html" style="white-space: nowrap;">Impressum & Datenschutz</a>
-</nav>
+        <a href="index.html">Unsere Geschichte</a>
+        <a href="sorten.html">Unsere Sorten</a>
+        <a href="aktuelles.html">Aktuelles</a>
+        <a href="impressum.html" style="white-space: nowrap;">Impressum & Datenschutz</a>
+    </nav>
 
     <main>
         <div class="sorten-box">
@@ -99,22 +114,37 @@
 
 <!-- Sorte: Walliser Aprikose -->
         <div class="sorten-box aprikose">
+            <span class="ribbon-ausverkauft">Ausverkauft!</span>
             <div class="sorten-header">
                 <span class="sorten-title">Senf</span>
                 <img src="19.png" alt="19" class="logo-img" style="height:40px;">
                 <span class="sorten-title accent-aprikose">Walliser Aprikose</span>
-                <span class="ribbon-sommeraktion">Sommeraktion<br>fast ausverkauft</span>
             </div>
             <p class="description">Fruchtig, süss, vollmundig. Passt zu Käse, Salaten, Pasteten und wenn es fein sein muss.</p>
             <p class="taste">Schmeckt nach Sommer, schön mild und rund.</p>
             <div class="ingredients">
-                <strong>Zutaten:</strong> Aprikosen, Orangensaft, Gelierzucker, Apfelsaft, <strong>Senf</strong> gelb, Apfelessig, Wasser, Balsamico, Rohrzucker, Senf braun, Salz, Farbstoffe E150c, E150d, <strong>Sulfite</strong>.
+                <strong>Zutaten:</strong> Aprikosen, Orangensaft, Gelierzucker, Apfelsaft, <strong>Senf</strong> gelb, Apfelessig, Wasser, Balsamico, Rohrzucker, Senf braun, Salz, Farstoffe E150c, E150d, <strong>Sulfite</strong>.
+                <p class="allergen">Kann Spuren von Nüssen enthalten.</p>
+            </div>
+        </div>
+
+<!-- Sorte: Zwetschgen -->
+        <div class="sorten-box zwetschge">
+            <div class="sorten-header">
+                <span class="sorten-title">Senf</span>
+                <img src="19.png" alt="19" class="logo-img" style="height:40px;">
+                <span class="sorten-title accent-zwetschge">Zwetschgen</span>
+            </div>
+            <p class="description">Eine überraschende Mischung aus süssen Zwetschgen und würzigem Rosmarin. Fruchtig aromatisch und vielseitig. Passt hervorragend zu Käse, Pasteten und Wild.</p>
+            <p class="taste">Schmeckt nach Spätsommer, Obstwiesen und mehr.</p>
+            <div class="ingredients">
+                <strong>Zutaten:</strong> Zwetschgen, Gelierzucker, Orangensaft, Apfelsaft, <strong>Senf</strong> gelb, Apfelessig, Wasser, Balsamico, Rohrzucker, Senf braun, Salz, Rosmarin, Farbstoffe E150c, E150d, <strong>Sulfite</strong>.
                 <p class="allergen">Kann Spuren von Nüssen enthalten.</p>
             </div>
         </div>
 
         <div class="cta-section">
-            <p>Lust bekommen? Schicke uns einfach deine Bestellung per E-Mail!</p>
+            <p>Sie möchten eine grössere Menge bestellen oder haben Fragen?</p>
             <a href="mailto:kontakt@senf19.ch?subject=Senf%20Bestellung" class="btn-email">Jetzt per E-Mail bestellen</a>
         </div>
     </main>
