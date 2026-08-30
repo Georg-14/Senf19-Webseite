@@ -6,43 +6,42 @@
     <title>Unsere Sorten — Senf 19</title>
     <link rel="stylesheet" href="https://use.typekit.net/pzt1zjx.css">
     <link rel="stylesheet" href="styles.css">
+
     <style>
-        /* --- Großer Banner für "Ausverkauft!" mittig in der Aprikosen-Box --- */
+        /* --- Ausverkauft-Banner --- */
         .sorten-box.aprikose {
             position: relative;
             overflow: visible;
-            opacity: 0.85; /* Macht die ausverkaufte Box optisch etwas dezenter */
+            opacity: 0.85;
         }
 
         .ribbon-ausverkauft {
             position: absolute;
             top: 50%;
             left: 50%;
-            /* Exakt zentriert & um -13 Grad gedreht */
-            transform: translate(-50%, -50%) rotate(-13deg); 
-            background-color: rgba(230, 81, 0, 0.95); /* Original warmes Orange */
-            color: #000000;                     /* Schwarze Schrift */
+            transform: translate(-50%, -50%) rotate(-13deg);
+            background-color: rgba(230, 81, 0, 0.95);
+            color: #000000;
             font-family: inherit;
-            font-size: 1.7rem;                  /* Prägnante, große Schrift */
+            font-size: 1.7rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            padding: 14px 40px;                 /* Großzügiges Polster */
+            padding: 14px 40px;
             border-radius: 6px;
             pointer-events: none;
-            z-index: 20;                        /* Liegt sicher über allen Inhalten */
+            z-index: 20;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
             text-align: center;
             white-space: nowrap;
         }
 
-        /* --- Neue Sorte: Zwetschge --- */
+        /* --- Sorte Zwetschge --- */
         .sorten-box.zwetschge {
-            border-color: #583385; /* Tiefer Zwetschgen-Farbton für den Rahmen */
+            border-color: #583385;
         }
 
         .sorten-title.accent-zwetschge {
-            /* Linearer Farbverlauf von Blau zu Violett/Purpur */
             background: linear-gradient(135deg, #1d4ed8 0%, #6b21a8 50%, #86198f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -50,7 +49,24 @@
             color: transparent;
             display: inline-block;
         }
+
+        /* --- NEU: Umbruch-Regeln für Mobilgeräte --- */
+        .sorten-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;       /* Erlaubt der Sorte das Umbrechen */
+            gap: 6px 10px;
+            margin-bottom: 12px;
+        }
+
+        .brand-group {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;   /* Hält "Senf 19" unzertrennlich zusammen */
+            gap: 6px;
+        }
     </style>
+    
 </head>
 <body>
 
@@ -135,7 +151,7 @@
                 <img src="19.png" alt="19" class="logo-img" style="height:40px;">
                 <span class="sorten-title accent-zwetschge">Zwetschgen</span>
             </div>
-            <p class="description">Eine überraschende Mischung aus süssen Zwetschgen und würzigem Rosmarin. Fruchtig aromatisch und vielseitig. Passt hervorragend zu Käse, Pasteten und Wild.</p>
+            <p class="description">Eine überraschende Mischung aus süssen Zwetschgen und würzigem Rosmarin. Fruchtig, aromatisch und vielseitig. Passt hervorragend zu Käse, Pasteten und Wild.</p>
             <p class="taste">Schmeckt nach Spätsommer, Obstwiesen und mehr.</p>
             <div class="ingredients">
                 <strong>Zutaten:</strong> Zwetschgen, Gelierzucker, Orangensaft, Apfelsaft, <strong>Senf</strong> gelb, Apfelessig, Wasser, Balsamico, Rohrzucker, Senf braun, Salz, Rosmarin, Farbstoffe E150c, E150d, <strong>Sulfite</strong>.
