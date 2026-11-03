@@ -51,6 +51,32 @@
             color: transparent;
             display: inline-block;
         }
+        /* Das Ausverkauft-Banner für die Zwetschge im passenden Farbton */
+        .sorten-box.zwetschge {
+            position: relative; /* Wichtig, damit das Banner richtig positioniert wird */
+            overflow: hidden;   /* Schneidet überstehende Ecken des Banners sauber ab */
+        }
+
+        .ribbon-ausverkauft-zwetschge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-13deg);
+            background-color: #583385; /* Trage hier exakt den Farbcode von deinem Zwetschgen-Schriftzug ein */
+            color: #ffffff;
+                        font-family: inherit;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 14px 40px;
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 20;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            white-space: nowrap;
+        }
 
         /* --- NEU: Umbruch-Regeln für Mobilgeräte --- */
         .sorten-header {
@@ -132,6 +158,7 @@
 
 <!-- Sorte: Zwetschgen -->
         <div id="zwetschge" class="sorten-box zwetschge">
+            <div class="ribbon-ausverkauft-zwetschge">Ausverkauft!</div>
             <div class="sorten-header">
                 <span class="sorten-title">Senf</span>
                 <img src="19.png" alt="19" class="logo-img" style="height:40px;">
